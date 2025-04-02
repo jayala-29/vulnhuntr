@@ -288,7 +288,7 @@ def initialize_llm(llm_arg: str, system_prompt: str = "") -> Claude | ChatGPT | 
         anth_base_url = os.getenv("ANTHROPIC_BASE_URL", "https://api.anthropic.com")
         llm = Claude(anth_model, anth_base_url, system_prompt)
     elif llm_arg == 'gpt':
-        openai_model = os.getenv("OPENAI_MODEL", "o1-mini")
+        openai_model = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
         openai_base_url = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
         llm = ChatGPT(openai_model, openai_base_url, system_prompt)
     elif llm_arg == 'ollama':
